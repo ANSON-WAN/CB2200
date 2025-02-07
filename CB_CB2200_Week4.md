@@ -1,24 +1,24 @@
 # CB2200 PALSI 2024-2025B, Anson Section
 
-**It is not finished as Cityu only give me 1 paid hour for preparing. I will continuously to update when I was free**
-
-Hi! Everyone. It is so great to see you guys at this palsi section. You guys have come not just a first step to get a good grade in this course.
+Hi! Everyone. It is so great to see you guys at this palsi section. You guys make not just a first step to get a good grade in this course.
 
 ~~Even I particularly choose the friday course and begin at friday 7:00 pm. You guys are still coming~~
 
 Let me introduce myself first. My name is Anson. I am currently stuudying in computaional finance and fincance technology , double major in information mangement (business intelligence)
 
-I think we could make something fantastics and do a good job together in this semester :joy:
+I think we could make something fantastics and create some good job together in this semester :joy:
 
-Last semester, This course exam have be heavily rely on your understanding of questions. It indicates the following things:
+Last semester, This course exam have be heavily rely on your understanding of concepts and my palsi friends told me that it is the hardest one in recent year. It indicates the following things:
 - You need to understand the concepts deeply
-- Understand why the question and answer
-- Make sure you do the exercise every week
+- Understand why the question is and how to answer correctly
+- Make sure you do the exercise every week as it will be overloaded at the semester end (trust me)(Last semester, I saw that my palsi friends can not finished the revision)
 
 As it is first class, I will mainly focus on concept. 
-I will also introduce some things you gonna know for your fully understanding, like numeric elemetary method, python programming matlab calculation, and some data science concepts.
+I will also introduce some things you gonna know for your fully understanding, like numeric elemetary method, set theoty, python programming, matlab calculation, and some data science concepts. It is totally optional. 
 
 My goal is to make sure you have a fully solid background not only for this class and even get the advanced statistics concepts and data analysis methdology.
+
+**It is not finished as Cityu only give me 1 paid hour for preparing. I will continuously to update when I was free**
 
 The role of probability theory
 ---
