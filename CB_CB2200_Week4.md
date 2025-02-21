@@ -352,8 +352,12 @@ as you sample more observations from a population, the sample mean gets closer t
 - An interval estimate uses a range of values to estimate a population parameter.
 - help describe the uncertainty surrounding an estimate. 
 - Technically, 95% confidence means that if you take repeated random samples from a population, and construct a confidence interval for each sample using the same method, you can expect that 95% of these intervals will capture the population mean. You can also expect that 5% of the total will not capture the population mean. 
+- Confidence Level : The confidence level represents the probability that a confidence interval will contain the true parameter value. Common confidence levels are **90%, 95%, and 99%**.
 - The confidence level refers to the long-term success rate of the method, or the estimation process based on random sampling. 
 - Imagine you take 20 random samples of 100 penguins each from the penguin population, and calculate a 95% confidence interval for each sample. You can expect that approximately 19 of the 20 intervals, or 95% of the total, will contain the actual population mean weight of 31 pounds. One such interval will be the range of values between 28 pounds and 32 pounds. 
+- Statistical Significance
+    - Definition: Statistical significance indicates whether the observed effect or relationship in the data is unlikely to have occurred by random chance alone, based on a predetermined significance level (e.g., α = 0.05).
+    - Usage: Helps in deciding whether to reject the null hypothesis. If the P-value is less than α, the result is considered statistically significant.
 
 -------
 Step of calculation
@@ -368,6 +372,7 @@ Step of calculation
 - Misinterpretation 1: 95% refers to the probability that the population mean falls within the constructed interval (In strictly, the population will not change, this statement seems like it would be changed.)
 - Misinterpretation 2: 95% refers to the percentage of data values that fall within the interval 
 - Misinterpretation 3: 95% refers to the percentage of sample means that fall within the interval 
+- Remark : There is no assumed relationship between confidence interval and confidence level. 
 
 ----------
 
@@ -411,19 +416,112 @@ The margin of error (MoE) is a statistic that quantifies the amount of random sa
 - Usage : A margin of error of ±3% means that if the survey result is 50%, the true population percentage is likely between 47% and 53%.
 - helps to understand the reliability and precision of survey results
 
+## 6.Hypothsis Testing
+- hypothesis testing uses sample data to evaluate an assumption about a population parameter. 
+- conduct a hypothesis test to decide whether the evidence from their sample data supports either the null hypothesis or the alternative hypothesis
+- Revise : Statistics significance : the claim that the results of a test or experiment are not explainable by chance alone.
+
+Steps of doing hyphosis testing
+1. State the null hypothesis and the alternative hypothesis.
+2. Choose a significance level.
+3. Find the p-value.
+4. Reject or fail to reject the null hypothesis.
+
+| Types| Effects|
+|----|----|
+| Null hypothesis | “no effect,” “no difference,” “no relationship,” or “no change.” |
+| Alternative hypothesis | “an effect,” “a difference,” “a relationship,” or “a change.” |
+
+### 6.1 Hypothesis testing error
+hypothesis testing is based on probability, there’s always a chance of drawing the wrong conclusion about the null hypothesis.
+
+When you decide to reject or fail to reject the null hypothesis, there are four possible outcomes :
+
+- Reject the null hypothesis when it’s actually true (Type I error)
+- Reject the null hypothesis when it’s actually false (Correct)
+- Fail to reject the null hypothesis when it’s actually true (Correct) 
+- Fail to reject the null hypothesis when it’s actually false (Type II error)
+
+Two important concepts in hypothesis testing error
+1. Alpha : Your significance level, or alpha (α), represents the probability of making a Type I error
+2. Beta : probability of making a Type II error is called beta (β), and beta is related to the power of a hypothesis test (power = 1- β)
+
+Solutions :
+Type I error : To reduce the risk of a Type I error, one can choose a lower significance level (α), which makes it harder to reject the null hypothesis.
+Tyoe II error : To reduce the risk of a Type II error, researchers may increase the sample size or the significance level, but this can increase the risk of Type I errors.
+
+Therefore, you can choose to reduce one error risk at one time. Considering the risk and benegit of each error will incur, then you will make a right choice. 
+
+### 6.2 Hypothesis testing Best practice
+Two main rules for drawing a conclusion about a hypothesis test: 
+- If your p-value is less than your significance level, you reject the null hypothesis.
+- If your p-value is greater than your significance level, you fail to reject the null hypothesis. 
+
+The P-value quantifies the strength of the evidence against the null hypothesis. It represents the probability of observing results as extreme as the ones obtained, assuming the null hypothesis is true.
+
+1. If your P-value is less than your significance level (P < α):
+Interpretation: This indicates that the observed data is very unlikely under the assumption that the null hypothesis is true. Since the probability of observing such extreme results is low, we have sufficient evidence to reject the null hypothesis.
+Conclusion: Rejecting the null hypothesis suggests that there is a statistically significant effect or relationship present in the data.
+2. If your P-value is greater than your significance level (P > α):
+Interpretation: This indicates that the observed data is consistent with the null hypothesis. The probability of observing such results is relatively high under the null hypothesis, suggesting that we do not have enough evidence to reject it.
+Conclusion: Failing to reject the null hypothesis means that the evidence is insufficient to support the alternative hypothesis. This does not prove that the null hypothesis is true; it simply indicates a lack of evidence against it.
+
+| p-value and significance level | Interpretation | Conclusion |
+| ------ | ------- | ------ |
+| P-value is less than your significance level (P < α) | the observed data is very unlikely under the assumption that the null hypothesis is true. Since the probability of observing such extreme results is low, we have sufficient evidence to reject the null hypothesis. | Rejecting the null hypothesis suggests that there is a statistically significant effect or relationship present in the data. |
+| P-value is greater than your significance level (P > α) | indicates that the observed data is consistent with the null hypothesis. The probability of observing such results is relatively high under the null hypothesis, suggesting that we do not have enough evidence to reject it. | This does not prove that the null hypothesis is true; it simply indicates a lack of evidence against it |
+
+### 6.3. One-tailed and two-tailed tests
+| Test | Result | Symbol |
+|-----|---------| --------|
+| A one-tailed test | results when the alternative hypothesis states that the actual value of a population parameter is either less than or greater than the value in the null hypothesis. | "<" / ">" |
+| Two-tailed test | results when the alternative hypothesis states that the actual value of the parameter does not equal the value in the null hypothesis | ~= |
+
+### 6.4. A/B Testing
+
+
+
+## 7. Regression Analysis
+regression analysis is about estimating relationships between a single dependent variable and one or more independent variables.
+
+The dependent variable is the variable a given model estimates. Sometimes the dependent variable is also called a response or outcome variable and is commonly represented with the letter y
+We assume that the dependent variable tends to vary based on the values of independent variables, typically represented by an x. Independent variables are also referred to as explanatory variables or predictor variables.
+
+Y = slope * x + intercept (when x = 0 ,the value of y)
+
+Correlated = they have linear shape
+Ordinacry Least Squares Estimation (One of the most common way)
+
+| type|effect |
+| ---- | --- |
+| positive| increase and decrease together |
+| negative| inverse |
+
+### Linear regression equation
+
+B_0 * (intercept) + B_1 (slope) * X
+Beta are parameter (parameter is from peopulation and not from sample)
+
+The only way for this is to estimate
+
+^B_0 + ^B_1X = y
+
+^B_1 is also called regression coefficients. It estimated betas in a regression model.
+
+We also try to minimize the loss function. It is a function that measures the distance between observed values and the model's estimated values. (We try to find the best line instead of just finding a line)
+
+### logistic regression (optional)
+
+Logistic regression is a technique that **models a categorical variable based on one or more independent variables.**
+- It is because some thing will be only true or false, not a line can model
+- outcome variable can be catrgorical
+
+The link function connects, or links, a dependent variable to the independent variables mathematically. Data professionals use the link function to express the relationship between the X’s and the probability that Y equals some outcome
+
+**Correlation is not causation**
+
 ## Python Programming
-
-''''''
-
-import numpy as np 
-
-import pandas as pd 
-
-import matplotlib.pyplot as plt
-
-
-''''''
-
+1. Beginning
 - .describe() convenient way to calculate many key stats all at once
     - if you want to pariticular check the value under the column, you can choose one column to explore more about it. 
 *   `count`: Number of non-NA/null observations
@@ -435,7 +533,12 @@ import matplotlib.pyplot as plt
 *   `75%`: The third quartile (75th percentile)
 *   `max`: The largest (maximum) value
 - .head() will give you the top rows of excel or csv file
+- .shape() is used to understand data column and rows number
 - range will not be provided by using .describe() as they do not provide range. You need to calculate it by using .max() - .min() 
+- df.columns
+- df.types
+- pd.crosstab(df["Gender"], df["GenderGroup"]) # Find out the number of them who cross in table
+- df.groupby(['Gender','GenderGroup']).size() # Used for quickly understand the data
 
     ```
     df = pd.read_excel('123.xlsx)
@@ -444,12 +547,69 @@ import matplotlib.pyplot as plt
     df['Sells'].max() - df['Sells'].min() # Method to calculate range
     ```
 
+2. Continuious data calculation
 - df.hist() is used to make a quick histogram
 - stats.zscore() is used to caculate the z-score
 - We use .shape() to find out the numbers of rows and columns. The row is the first one in returned tuple and the column is the second one.
 - .mean() for mean and .std() for sd
+- stats.norm.cdf(0) # Calculate the prob of continuous distribution
 
     ```
+    df = pd.read_excel('123.xlsx)
+    # common way to find the mass of the continuous distribution. If you do not use mean , it only return some true or false outcome. Using .mean(), it will create better result.
+    ((df['aqi_log'] >= x) & (df['aqi_log'] <= y)).mean()
+    df [ (df['Z_SCORE']> 3) | (df['Z_SCORE'] < -3)]
+    df['Z_SCORE'] = stats.zscore(df['aqi_log'])
+    ```
+
+3. Sample data calculation
+
+```
+# Sampling in python
+sampled_data = education_districtwise.sample(n=50, replace=True, random_state=31208)
+sampled_data.mean()
+
+# Below is the test of sampling
+estimate_list = []
+for i in range(10000):
+    estimate_list.append(education_districtwise['OVERALL_LI'].sample(n=50, replace=True).mean())
+estimate_df = pd.DataFrame(data={'estimate': estimate_list})
+```
+
+- n: You're sampling from 50 districts, so your sample size is 50.
+- replace: For the purpose of our example, you'll sample with replacement. True indicates sampling with replacement.
+- random_state: Choose an arbitrary number for your random seed. Say, 31208.
+- Simple visualization example
+
+```
+# How to create a hostogram in python
+plt.hist(estimate_df['estimate'], bins=25, density=True, alpha=0.4, label = "histogram of sample means of 10000 random samples")
+xmin, xmax = plt.xlim()
+x = np.linspace(xmin, xmax, 100) # generate a grid of 100 values from xmin to xmax.
+p = stats.norm.pdf(x, mean_sample_means, stats.tstd(estimate_df['estimate']))
+plt.plot(x, p,'k', linewidth=2, label = 'normal curve from central limit theorem')
+plt.axvline(x=population_mean, color='g', linestyle = 'solid', label = 'population mean')
+plt.axvline(x=estimate1, color='r', linestyle = '--', label = 'sample mean of the first random sample')
+plt.axvline(x=mean_sample_means, color='b', linestyle = ':', label = 'mean of sample means of 10000 random samples')
+plt.title("Sampling distribution of sample mean")
+plt.xlabel('sample mean')
+plt.ylabel('density')
+plt.legend(bbox_to_anchor=(1.04,1))
+plt.show() 
+```
+
+4. Confidence interval calculation
+If you’re working with a large sample size, say larger than 30, you can construct a confidence interval for the mean using `scipy.stats.norm.interval()`. This function includes the following arguments: 
+
+*   `alpha`: The confidence level
+*   `loc`: The sample mean
+*   `scale`: The sample standard error
+
+```
+estimated_standard_error = sampled_data['OVERALL_LI'].std() / np.sqrt(sampled_data.shape[0])
+stats.norm.interval(alpha=0.95, loc=sample_mean, scale=estimated_standard_error)
+stats.norm.interval(alpha=0.99, loc=sample_mean, scale=estimated_standard_error)
+```
     df = pd.read_excel('123.xlsx)
     # common way to find the mass of the continuous distribution. If you do not use mean , it only return some true or false outcome. Using .mean(), it will create better result.
     ((df['aqi_log'] >= x) & (df['aqi_log'] <= y)).mean()
